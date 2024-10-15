@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Matching Results</h2>
+<p><strong>Text:</strong> {{ text }}</p>
+<p><strong>Pattern:</strong> {{ pattern }}</p>
+
+{% if algorithm == 'naive' or algorithm == 'both' %}
+    <p><strong>Naive Algorithm Matches:</strong> {{ naive_matches }}</p>
+{% endif %}
+
+{% if algorithm == 'rabin-karp' or algorithm == 'both' %}
+    <p><strong>Rabin-Karp Algorithm Matches:</strong> {{ rabin_karp_matches }}</p>
+{% endif %}
+
+<a href="/">Try another match</a>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Enter Text and Pattern to Match</h2>
+<form method="POST" action="/match">
+    <div>
+        <label for="text">Text:</label>
+        <textarea name="text" id="text" rows="5" cols="50" required></textarea>
+    </div>
+    <div>
+        <label for="pattern">Pattern:</label>
+        <input type="text" name="pattern" id="pattern" required>
+    </div>
+    <div>
+        <label for="algorithm">Select Algorithm:</label>
+        <select name="algorithm" id="algorithm" required>
+            <option value="naive">Naive</option>
+            <option value="rabin-karp">Rabin-Karp</option>
+            <option value="both">Both</option>
+        </select>
+    </div>
+    <div>
+        <button type="submit">Run Algorithm</button>
+    </div>
+</form>
+{% endblock %}
